@@ -45,4 +45,53 @@ function isPointInPolygon(point, polygon) {
 
   return inside;
 }
+async function loadPolygonAlerts() {
+  if (!userLocation) return;
+
+  const alertsDiv = document.getElementById("alerts");
+  alertsDiv.innerHTML = "<p>Checking alerts for your area…</p>";
+
+  try {
+    const res = await fetch("https://api.weather.gov/alerts/active?area=OK");
+    const data = await res.json();
+
+    const matching = data.features.filter(alert => {
+      const geom = alert.geometry;
+      if (!geom || geom.type !== "Polygon") return false;
+
+      const polygon = geom.coordinates[0].map(([lon, lat]) => [lat, lon]);
+      return isPointInPolygon(
+        [userLocation.lat, userLocation.lon],
+        polygon
+      );
+    });
+
+    if (matching.length === 0) {
+      alertsDiv.innerHTML =
+        "<p>No active alerts for your location.</p>";
+      return;
+    }
+
+    alertsDiv.innerHTML = "<h2>Alerts For Your Area</h2>";
+
+    matching.forEach(a => {
+      const el = document.createElement("div");
+      el.style.border = "2px solid #cc0000";
+      el.style.padding = "12px";
+      el.style.margin = "12px 0";
+
+      el.innerHTML = `
+        <strong>${a.properties.event}</strong><br>
+        <small>${a.properties.areaDesc}</small>
+      `;
+      alertsDiv.appendChild(el);
+    });
+
+  } catch (e) {
+    alertsDiv.innerHTML =
+      "<p>Error checking alerts.</p>";
+    console.error(e);
+  }
+}
+
 
