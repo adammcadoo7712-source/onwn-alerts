@@ -64,9 +64,9 @@ function initAlerts() {
   // Clear any existing timers
   if (alertTimer) clearInterval(alertTimer);
 
-  // Check every 5 minutes
-  alertTimer = setInterval(loadAlertsForUser, 5 * 60 * 1000);
-}
+ // Aggressive refresh: every 60 seconds
+alertTimer = setInterval(loadAlertsForUser, 60 * 1000);
+
 
 /* ================================
    POINT IN POLYGON
@@ -147,3 +147,4 @@ async function loadAlertsForUser() {
       el.innerHTML = `
         <strong>${p.event}</strong><br>
         <small>${p.areaDesc}<
+
