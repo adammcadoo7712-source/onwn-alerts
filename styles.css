@@ -1,6 +1,6 @@
 /* ================================
-   ONWN WEATHER ALERTS – STYLES
-   Red / Black / White App Theme
+   ONWN WEATHER ALERTS – APP STYLES
+   Red / Black / White
    ================================ */
 
 /* Global reset */
@@ -19,11 +19,11 @@ body {
 }
 
 /* ================================
-   Header (App Bar)
+   Header (Real App Bar)
    ================================ */
 header {
   background-color: #cc0000;
-  padding: 8px 16px;
+  height: 56px;                 /* standard mobile app bar height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,70 +31,21 @@ header {
 
 /* ONWN Logo */
 .logo {
-  height: 26px;
-  max-width: 160px;
+  height: 28px;                 /* readable on phone */
+  max-width: 180px;
   object-fit: contain;
-}
-
-/* Tablets */
-@media (min-width: 600px) {
-  .logo {
-    height: 32px;
-    max-width: 200px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .logo {
-    height: 40px;
-    max-width: 260px;
-  }
-}
-
 }
 
 /* ================================
    Main Content Area
    ================================ */
 main {
-  padding: 24px 16px;
+  padding: 40px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ================================
-   Primary Buttons
-   ================================ */
-button {
-  background-color: #cc0000;
-  color: #ffffff;
-  border: none;
-  padding: 16px 20px;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-button:active {
-  transform: scale(0.97);
-}
-
-/* ================================
-   Status / Info Text
-   ================================ */
-#status {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #cccccc;
-  line-height: 1.4;
-}
-
-/* ================================
-   Utility Classes (Future Use)
-   ================================ */
-.hidden {
-  display: none;
-}
+   Primary Button
+   =======================
