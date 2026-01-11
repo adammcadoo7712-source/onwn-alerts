@@ -1,30 +1,9 @@
-function enableAlerts() {
-  const status = document.getElementById("status");
+<body>
+  <h1>ONWN Weather Alerts</h1>
 
-  if (!("geolocation" in navigator)) {
-    status.innerText = "Geolocation not supported.";
-    return;
-  }
+  <button onclick="enableAlerts()">Enable Weather Alerts</button>
 
-  navigator.geolocation.getCurrentPosition(
-    async (position) => {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
+  <p id="status"></p>
 
-      const permission = await Notification.requestPermission();
-      if (permission !== "granted") {
-        status.innerText = "Notifications blocked.";
-        return;
-      }
-
-      status.innerText =
-        "Alerts enabled for your location: " +
-        lat.toFixed(2) +
-        ", " +
-        lon.toFixed(2);
-    },
-    () => {
-      status.innerText = "Location permission denied.";
-    }
-  );
-}
+  <script src="app.js"></script>
+</body>
