@@ -2,4 +2,4 @@ function testAlert() {
   alert("JavaScript is working!");
 }
 
-console.log("app.js loaded");
+console.log("app.js loaded correctly");
