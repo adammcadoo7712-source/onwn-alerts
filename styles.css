@@ -1,111 +1,44 @@
-* {
-  box-sizing: border-box;
-}
-
-/* Theme variables */
-:root {
-  --onwn-red: #cc0000;
-  --bg: #000000;
-  --text: #ffffff;
-  --header-height: 80px;
-}
-
-/* Base */
 body {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  background: black;
+  color: white;
   text-align: center;
 }
 
-/* ===== HEADER ===== */
 header {
-  background-color: var(--onwn-red);
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  background: #cc0000;
+  padding: 20px;
 }
 
-/* LOGO — BIGGER */
 .logo {
-  height: 56px;           /* BIGGER logo */
-  max-width: 90vw;
+  height: 48px;
   object-fit: contain;
 }
 
-/* ===== MAIN CONTENT ===== */
 main {
-  min-height: calc(100vh - var(--header-height));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 16px 24px;
+  padding: 40px 16px;
 }
 
-/* ===== BUTTON — SMALLER & CLEAN ===== */
 button {
-  background-color: var(--onwn-red);
-  color: #ffffff;
+  background: #cc0000;
+  color: white;
   border: none;
-
-  width: 100%;
-  max-width: 340px;       /* SMALLER button width */
-
-  padding: 16px 20px;     /* SMALLER button height */
-  font-size: 20px;        /* SMALLER text */
-  font-weight: 700;
-
+  padding: 18px;
+  font-size: 20px;
   border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 340px;
 }
 
-button:active {
-  transform: scale(0.97);
+#alerts div {
+  border: 2px solid #cc0000;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
 }
 
-/* STATUS TEXT */
 #status {
   margin-top: 20px;
-  font-size: 15px;
-  color: #dddddd;
-  line-height: 1.4;
-  max-width: 360px;
+  color: #ccc;
 }
-
-/* ===== TABLET ===== */
-@media (min-width: 600px) {
-  :root { --header-height: 92px; }
-
-  .logo {
-    height: 64px;
-  }
-
-  button {
-    max-width: 380px;
-    font-size: 22px;
-  }
-}
-
-/* ===== DESKTOP ===== */
-@media (min-width: 1024px) {
-  :root { --header-height: 104px; }
-
-  .logo {
-    height: 72px;
-  }
-
-  main {
-    padding-top: 96px;
-  }
-
-  button {
-    max-width: 420px;
-    font-size: 24px;
-  }
-}
-
