@@ -12,17 +12,12 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
-messaging.onBackgroundMessage((payload) => {
-  console.log("Background message received:", payload);
-
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
-    icon: "/onwn-alerts/onwn-logo.png"
-  };
-
+messaging.onBackgroundMessage(payload => {
   self.registration.showNotification(
-    notificationTitle,
-    notificationOptions
+    payload.notification.title,
+    {
+      body: payload.notification.body,
+      icon: "/onwn-alerts/onwn-logo.png"
+    }
   );
 });
