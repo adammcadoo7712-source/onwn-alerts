@@ -48,4 +48,9 @@ button:active {
   font-size: 14px;
   color: #cccccc;
 }
+/* Logo styling */
+.logo {
+  height: 40px;
+  max-width: 90%;
+}
 
