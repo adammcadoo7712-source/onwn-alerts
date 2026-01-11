@@ -1,58 +1,98 @@
 /* =================================
-   ONWN WEATHER ALERTS – FINAL STYLES
-   Designed for PHONE FIRST
+   ONWN WEATHER ALERTS – MOBILE FIX
    ================================= */
 
-/* Reset */
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+:root {
+  --onwn-red: #cc0000;
+  --bg: #000000;
+  --text: #ffffff;
+
+  /* App bar height */
+  --header-h: 78px;
 }
 
-/* Body */
 body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #000000;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--text);
   text-align: center;
 }
 
-/* =================================
-   HEADER / BRAND BAR
-   ================================= */
+/* ===== Header (fix: not huge, logo fills it) ===== */
 header {
-  background-color: #cc0000;
-  padding: 20px 16px;   /* TALLER header */
+  background: var(--onwn-red);
+  height: var(--header-h);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 0 16px;
 }
 
-/* Logo — PHONE FIRST */
+/* Bigger logo, but constrained */
 .logo {
-  height: 42px;          /* BIGGER logo for phone */
-  max-width: 240px;
+  height: 48px;          /* THIS is the key change */
+  max-width: 88vw;
   object-fit: contain;
 }
 
-/* =================================
-   MAIN CONTENT
-   ================================= */
+/* ===== Main (center content like an app) ===== */
 main {
-  padding: 48px 16px;
+  min-height: calc(100vh - var(--header-h));
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+
+  padding: 72px 16px 24px; /* pushes button down nicely */
 }
 
-/* =================================
-   PRIMARY ACTION BUTTON
-   ================================= */
+/* ===== Primary action button (bigger, app-like) ===== */
 button {
-  background-color: #cc0000;
-  color: #ffffff;
+  background: var(--onwn-red);
+  color: #fff;
   border: none;
-  padding: 22px 24px;    /* BIG button */
-  font-size: 22px;       /
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 22px 24px;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 10px;
+
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.55);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Status text */
+#status {
+  margin-top: 22px;
+  font-size: 16px;
+  color: #dddddd;
+  line-height: 1.45;
+  max-width: 420px;
+}
+
+/* ===== Tablet / desktop scaling ===== */
+@media (min-width: 600px) {
+  :root { --header-h: 86px; }
+  .logo { height: 54px; }
+  main { padding-top: 90px; }
+  button { font-size: 26px; }
+}
+
+@media (min-width: 1024px) {
+  :root { --header-h: 96px; }
+  .logo { height: 62px; }
+  main { padding-top: 110px; }
+  button { font-size: 28px; }
+}
 
