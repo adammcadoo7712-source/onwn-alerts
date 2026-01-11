@@ -1,1 +1,51 @@
+/* ONWN Branding */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background-color: #cc0000;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* Main content */
+main {
+  padding: 24px;
+}
+
+/* Buttons */
+button {
+  background-color: #cc0000;
+  color: #ffffff;
+  border: none;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Status text */
+#status {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #cccccc;
+}
 
