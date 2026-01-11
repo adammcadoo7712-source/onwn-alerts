@@ -29,11 +29,29 @@ header {
   align-items: center;
 }
 
-/* ONWN Logo in header */
+/* ONWN Logo */
 .logo {
-  height: 26px;        /* Controls logo height */
-  max-width: 160px;    /* Prevents oversized wide logos */
+  height: 26px;
+  max-width: 160px;
   object-fit: contain;
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+  .logo {
+    height: 32px;
+    max-width: 200px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .logo {
+    height: 40px;
+    max-width: 260px;
+  }
+}
+
 }
 
 /* ================================
