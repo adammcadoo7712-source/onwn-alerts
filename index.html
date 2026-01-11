@@ -2,42 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ONWN Alerts</title>
+  <title>ONWN Weather Alerts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/onwn-alerts/">
-  <link rel="stylesheet" href="/onwn-alerts/styles.css">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <header>
-  <img src="/onwn-alerts/onwn-logo.png" alt="ONWN Logo" class="logo">
-</header>
-
+    <img src="onwn-logo.png" class="logo" alt="ONWN">
   </header>
 
   <main>
-  <button id="enableAlerts">Enable Weather Alerts</button>
-
-  <div id="alerts"></div>
-
-  <p id="status"></p>
+    <button id="enableAlerts">Enable Weather Alerts</button>
+    <div id="alerts"></div>
+    <p id="status"></p>
   </main>
-<!-- Firebase SDKs -->
-  
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script>
 
-  <script src="/onwn-alerts/app.js"></script>
+  <!-- Firebase SDKs MUST come first -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script>
+
+  <!-- App logic -->
+  <script src="app.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-
 
 
