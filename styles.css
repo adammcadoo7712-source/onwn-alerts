@@ -1,14 +1,14 @@
-/* ================================
-   ONWN WEATHER ALERTS – APP STYLES
-   Red / Black / White
-   ================================ */
+/* =================================
+   ONWN WEATHER ALERTS – FINAL STYLES
+   Designed for PHONE FIRST
+   ================================= */
 
-/* Global reset */
+/* Reset */
 * {
   box-sizing: border-box;
 }
 
-/* App body */
+/* Body */
 body {
   margin: 0;
   padding: 0;
@@ -18,34 +18,41 @@ body {
   text-align: center;
 }
 
-/* ================================
-   Header (Real App Bar)
-   ================================ */
+/* =================================
+   HEADER / BRAND BAR
+   ================================= */
 header {
   background-color: #cc0000;
-  height: 56px;                 /* standard mobile app bar height */
+  padding: 20px 16px;   /* TALLER header */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ONWN Logo */
+/* Logo — PHONE FIRST */
 .logo {
-  height: 28px;                 /* readable on phone */
-  max-width: 180px;
+  height: 42px;          /* BIGGER logo for phone */
+  max-width: 240px;
   object-fit: contain;
 }
 
-/* ================================
-   Main Content Area
-   ================================ */
+/* =================================
+   MAIN CONTENT
+   ================================= */
 main {
-  padding: 40px 16px 24px;
+  padding: 48px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* ================================
-   Primary Button
-   =======================
+/* =================================
+   PRIMARY ACTION BUTTON
+   ================================= */
+button {
+  background-color: #cc0000;
+  color: #ffffff;
+  border: none;
+  padding: 22px 24px;    /* BIG button */
+  font-size: 22px;       /
+
